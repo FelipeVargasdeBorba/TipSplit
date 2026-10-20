@@ -206,8 +206,10 @@ describe('TipSplit local storage', () => {
   })
 
   it('skips a malformed oversized inventory record but still loads other valid records', () => {
-    const oversizedSource = createEmptyDenominationCounts()
-    oversizedSource.note200 = Number.MAX_SAFE_INTEGER
+    const oversizedSource = {
+      ...createEmptyDenominationCounts(),
+      note200: Number.MAX_SAFE_INTEGER,
+    }
     const oversizedRecord = {
       ...sampleRecord,
       id: 'oversized-record',
@@ -229,8 +231,8 @@ describe('TipSplit local storage', () => {
     vi.stubGlobal('localStorage', {
       getItem() { throw new Error('Storage access denied') },
       setItem() { throw new Error('Storage access denied') },
-      removeItem() {},
-      clear() {},
+      removeItem() { },
+      clear() { },
       key() { return null },
       get length() { return 0 },
     } as Storage)
@@ -244,8 +246,8 @@ describe('TipSplit local storage', () => {
     vi.stubGlobal('localStorage', {
       getItem() { return null },
       setItem() { throw new Error('Quota exceeded') },
-      removeItem() {},
-      clear() {},
+      removeItem() { },
+      clear() { },
       key() { return null },
       get length() { return 0 },
     } as Storage)
