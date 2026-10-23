@@ -1,0 +1,315 @@
+.cash-delivery-section {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border-color, rgba(148, 163, 184, 0.22));
+}
+
+.cash-section-heading h4 {
+  margin: 0.15rem 0 0.35rem;
+  font-size: 1.08rem;
+}
+
+.cash-section-heading p:not(.eyebrow) {
+  margin: 0 0 1rem;
+  color: var(--muted-text, #8d98a8);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.cash-delivery-card {
+  padding: 1rem;
+  margin-top: 0.85rem;
+  border: 1px solid var(--border-color, rgba(148, 163, 184, 0.22));
+  border-radius: 14px;
+  background: var(--card-surface, rgba(255, 255, 255, 0.025));
+}
+
+.cash-delivery-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin-bottom: 0.9rem;
+}
+
+.cash-delivery-card-header > div:first-child,
+.cash-paid-summary {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.cash-delivery-card-header > div:first-child span,
+.cash-paid-summary span {
+  color: var(--muted-text, #8d98a8);
+  font-size: 0.82rem;
+}
+
+.cash-paid-summary {
+  text-align: right;
+}
+
+.cash-paid-summary strong {
+  font-size: 1.05rem;
+}
+
+.denomination-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.6rem;
+}
+
+.denomination-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--muted-text, #8d98a8);
+}
+
+.denomination-field input {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+  padding: 0.58rem 0.5rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color, rgba(148, 163, 184, 0.3));
+  background: var(--input-surface, rgba(15, 23, 42, 0.5));
+  color: inherit;
+  font: inherit;
+  font-size: 0.9rem;
+}
+
+.denomination-field input:focus {
+  outline: 2px solid var(--accent, #80bd86);
+  outline-offset: 1px;
+}
+
+.cash-difference {
+  margin-top: 0.9rem;
+  padding: 0.7rem 0.8rem;
+  border-radius: 9px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  font-size: 0.84rem;
+}
+
+.cash-difference.exact {
+  background: rgba(34, 197, 94, 0.09);
+  color: var(--success, #78d69a);
+}
+
+.cash-difference.overpaid,
+.cash-difference.underpaid {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--warning, #f6c56b);
+}
+
+.cash-reconciliation-total {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1rem;
+  padding: 0.9rem;
+  border-radius: 10px;
+  background: var(--card-surface, rgba(255, 255, 255, 0.035));
+}
+
+.cash-reconciliation-total > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.cash-reconciliation-total span {
+  color: var(--muted-text, #8d98a8);
+  font-size: 0.8rem;
+}
+
+.cash-reconciliation-total strong {
+  font-size: 1rem;
+}
+
+.difference-exact {
+  color: var(--success, #78d69a) !important;
+}
+
+.difference-alert {
+  color: var(--warning, #f6c56b) !important;
+}
+
+.history-employee {
+  padding-bottom: 0.75rem;
+  margin-bottom: 0.75rem;
+  border-bottom: 1px solid var(--border-color, rgba(148, 163, 184, 0.14));
+}
+
+.history-employee:last-child {
+  border-bottom: 0;
+  margin-bottom: 0;
+}
+
+.history-cash-detail {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1rem;
+  align-items: center;
+  padding: 0 0.7rem 0.2rem 3.1rem;
+  font-size: 0.82rem;
+}
+
+.history-cash-detail details {
+  flex-basis: 100%;
+  color: var(--muted-text, #8d98a8);
+  margin-top: 0.2rem;
+}
+
+.history-cash-detail summary {
+  cursor: pointer;
+}
+
+.history-cash-detail details p {
+  margin: 0.45rem 0 0;
+  line-height: 1.5;
+}
+
+@media (max-width: 540px) {
+  .denomination-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cash-reconciliation-total {
+    grid-template-columns: 1fr;
+  }
+
+  .history-cash-detail {
+    padding-left: 0.3rem;
+  }
+}
+
+/* Cash inventory inputs and suggested physical payouts. */
+.cash-inventory-panel {
+  margin-bottom: 1.25rem;
+}
+
+.inventory-intro {
+  margin: 0 0 1rem;
+  color: var(--muted-text, #8d98a8);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.denomination-section-label {
+  margin: 1rem 0 0.65rem;
+  color: var(--text-color, #e5e7eb);
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+.cash-inventory-total {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin-top: 1.2rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: var(--card-surface, rgba(255, 255, 255, 0.04));
+}
+
+.cash-inventory-total > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cash-inventory-total span {
+  color: var(--muted-text, #8d98a8);
+  font-size: 0.82rem;
+}
+
+.cash-inventory-total strong {
+  font-size: 1.25rem;
+}
+
+.payout-denomination-detail {
+  padding: 0.75rem 0.85rem;
+  border-radius: 9px;
+  background: var(--card-surface, rgba(255, 255, 255, 0.035));
+  margin-top: 0.35rem;
+}
+
+.payout-denomination-detail span {
+  color: var(--muted-text, #8d98a8);
+  font-size: 0.79rem;
+}
+
+.payout-denomination-detail p {
+  margin: 0.35rem 0 0;
+  color: var(--text-color, #e5e7eb);
+  font-size: 0.86rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+.payout-shortfall {
+  margin: 0.65rem 0 0;
+  color: var(--warning, #f6c56b);
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.remainder-panel {
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid var(--border-color, rgba(245, 158, 11, 0.35));
+  border-radius: 12px;
+  background: rgba(245, 158, 11, 0.055);
+}
+
+.remainder-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.remainder-heading h4 {
+  margin: 0.15rem 0 0;
+  font-size: 1.02rem;
+}
+
+.remainder-heading > strong {
+  font-size: 1.3rem;
+  white-space: nowrap;
+}
+
+.remainder-panel > p {
+  margin: 0.75rem 0;
+  color: var(--muted-text, #8d98a8);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+.history-cash-inventory {
+  padding: 0.9rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  background: var(--card-surface, rgba(255, 255, 255, 0.035));
+}
+
+.history-cash-inventory p {
+  margin: 0.25rem 0;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 540px) {
+  .cash-inventory-total {
+    grid-template-columns: 1fr;
+  }
+}
